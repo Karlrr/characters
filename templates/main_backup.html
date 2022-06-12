@@ -1,0 +1,468 @@
+<!doctype html>
+<html lang="ko">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+          integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+            integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+            crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+            integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+            crossorigin="anonymous"></script>
+    <!-- Add icon library -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+
+    <title>메인 페이지</title>
+
+    <!--Font-->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Dongle:wght@300;400;700&display=swap" rel="stylesheet">
+
+    <style>
+
+        *{font-family: 'Dongle', sans-serif;
+            font-size: x-large;
+        }
+
+        .banner{
+            margin: auto;
+            font-size: xxx-large;
+        }
+
+        .search{
+            margin: auto;
+        }
+
+        .line_break{
+            width: 100%;
+        }
+
+        .Top_tier{
+            width: 90%;
+            margin: auto;
+        }
+
+        .Mid_tier{
+            display: flex;
+            flex-wrap: wrap;
+        }
+
+        .row_5{
+            width: 90%;
+            /*background-color: #aba8f4;*/
+        }
+
+        .name{
+            font-weight: bold;
+            font-size: xxx-large;
+        }
+
+        .portrait{
+            flex-basis: 25%;
+            display: flex;
+            flex-direction: column;
+            flex-shrink: 0;
+            flex-grow: 0;
+
+            flex: fit-content;
+        }
+
+        .checked{
+            color: orange;
+        }
+
+        .nav_font{
+            font-family: 'Dongle', sans-serif;
+            font-size: x-large;
+            color: #ff6209;
+        }
+
+    </style>
+
+</head>
+<body>
+
+    <div class="container">
+        <!--카테고리-->
+        <div class="row row_1">
+            <div class="Category col-xs-12 ">
+                <div>
+                    <a class="nav_font" href="">C.A.Ts</a>
+                    <a class="nav_font" href="">게시판</a>
+                    <a class="nav_font" href="">나의 캐릭터</a>
+                </div>
+            </div>
+        </div>
+
+        <!--배너-->
+        <div class="row row_2 my-4">
+            <div class="banner col-xs-12">
+
+                <img src="https://velog.velcdn.com/images/karlrl3108/post/24d2015e-c296-41a1-ad79-8e227f076626/image.png"
+                class="img-fluid" alt="Responsive image">
+
+            </div>
+        </div>
+
+        <!--캐릭터 검색-->
+        <div class="row row_3 my-4">
+            <div class="search col-xs-12">
+                <input placeholder="캐릭터 이름을 입력하세요"><button>찾기</button>
+            </div>
+        </div>
+
+        <!--캐릭터 나열(랭킹순)-->
+
+        <div class="row row_4 justify-content-center align-items-center">
+
+            <!--최상위 티어-->
+            <div class="col-1 col-lg-3 mt-4"></div>
+            <div class="col-14 col-lg-6 mt-4">
+
+                <div>
+
+                    <div class="Top_tier portrait embed-responsive embed-responsive-1by1">
+                        <img src="https://yt3.ggpht.com/ytc/AKedOLSfQxw7g_Z3_kPv_QPg1sLHFofJXKPV34yYOOpsAg=s900-c-k-c0x00ffffff-no-rj"
+                             class="card-img-top embed-responsive-item img-fluid" alt="Responsive image">
+                    </div>
+                    <div class="name blockquote text-center">
+                        핑크퐁
+                        <div>
+                        <i class="fa fa-star fa-2x checked"></i>
+                        <i class="fa fa-star fa-2x checked"></i>
+                        <i class="fa fa-star fa-2x checked"></i>
+                        <i class="fa fa-star fa-2x checked"></i>
+                        <i class="fa fa-star fa-2x checked"></i>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+            <div class="col-1 col-lg-3 mt-4"></div>
+
+            <!-- 레이아웃 줄바꿈-->
+            <div class="line_break mt-2"></div>
+
+            <!--상위 티어-->
+            <div class="row row_5 justify-content-between">
+
+                <div class="col-6 col-md-3">
+                    <div class="Mid_tier">
+                        <div class="portrait embed-responsive embed-responsive-1by1">
+                            <img src="https://image.yes24.com/goods/105982275/XL"
+                                 class="card-img-top embed-responsive-item img-fluid" alt="Responsive image">
+                        </div>
+                    </div>
+
+                    <div class="name blockquote text-center">
+                        아기상어
+
+                    <div>
+                        <i class="fa fa-star checked"></i>
+                        <i class="fa fa-star checked"></i>
+                        <i class="fa fa-star checked"></i>
+                        <i class="fa fa-star checked"></i>
+                        <i class="fa fa-star-half-o checked"></i>
+                    </div>
+
+                    </div>
+
+                </div>
+                <div class="col-6 col-md-3">
+                    <div class="Mid_tier">
+                        <div class="portrait embed-responsive embed-responsive-1by1">
+                            <img src="https://image.yes24.com/goods/105982275/XL"
+                                 class="card-img-top embed-responsive-item img-fluid" alt="Responsive image">
+                        </div>
+                    </div>
+
+                    <div class="name blockquote text-center">
+                        아기상어
+
+                    <div>
+                        <i class="fa fa-star checked"></i>
+                        <i class="fa fa-star checked"></i>
+                        <i class="fa fa-star checked"></i>
+                        <i class="fa fa-star checked"></i>
+                        <i class="fa fa-star-half-o checked"></i>
+                    </div>
+
+                    </div>
+
+                </div>
+                <div class="col-6 col-md-3">
+                    <div class="Mid_tier">
+                        <div class="portrait embed-responsive embed-responsive-1by1">
+                            <img src="https://image.yes24.com/goods/105982275/XL"
+                                 class="card-img-top embed-responsive-item img-fluid" alt="Responsive image">
+                        </div>
+                    </div>
+
+                    <div class="name blockquote text-center">
+                        아기상어
+
+                    <div>
+                        <i class="fa fa-star checked"></i>
+                        <i class="fa fa-star checked"></i>
+                        <i class="fa fa-star checked"></i>
+                        <i class="fa fa-star checked"></i>
+                        <i class="fa fa-star-half-o checked"></i>
+                    </div>
+
+                    </div>
+
+                </div>
+                <div class="col-6 col-md-3">
+                    <div class="Mid_tier">
+                        <div class="portrait embed-responsive embed-responsive-1by1">
+                            <img src="https://image.yes24.com/goods/105982275/XL"
+                                 class="card-img-top embed-responsive-item img-fluid" alt="Responsive image">
+                        </div>
+                    </div>
+
+                    <div class="name blockquote text-center">
+                        아기상어
+
+                    <div>
+                        <i class="fa fa-star checked"></i>
+                        <i class="fa fa-star checked"></i>
+                        <i class="fa fa-star checked"></i>
+                        <i class="fa fa-star checked"></i>
+                        <i class="fa fa-star-half-o checked"></i>
+                    </div>
+
+                    </div>
+
+                </div>
+
+
+            </div>
+
+            <!-- 레이아웃 줄바꿈-->
+            <div class="line_break mt-4"></div>
+
+            <!--나머지-->
+            <div class="row row_6">
+                <div class="col-3 col-sm-3 col-md-2 mt-1">
+                    <div class="Bot_tier">
+                        <div class="portrait embed-responsive embed-responsive-1by1">
+                            <img src="https://image.genie.co.kr/Y/IMAGE/IMG_MUSICVIDEO/000/184/992/184992_1_640x360.JPG/dims/resize/Q_80,0"
+                                 class="card-img-top embed-responsive-item img-fluid" alt="Responsive image">
+                        </div>
+                        <div class="name blockquote text-center">
+                            경찰차
+
+                            <div>
+                                <i class="fa fa-star checked" style="font-size: medium"></i>
+                                <i class="fa fa-star checked" style="font-size: medium"></i>
+                                <i class="fa fa-star checked" style="font-size: medium"></i>
+                                <i class="fa fa-star checked" style="font-size: medium"></i>
+                                <i class="fa fa-star-o fa-lg checked" style="font-size: medium"></i>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+                <div class="col-3 col-sm-3 col-md-2 mt-1">
+                    <div class="Bot_tier">
+                        <div class="portrait embed-responsive embed-responsive-1by1">
+                            <img src="https://image.genie.co.kr/Y/IMAGE/IMG_MUSICVIDEO/000/184/992/184992_1_640x360.JPG/dims/resize/Q_80,0"
+                                 class="card-img-top embed-responsive-item img-fluid" alt="Responsive image">
+                        </div>
+                        <div class="name blockquote text-center">
+                            경찰차
+
+                            <div>
+                                <i class="fa fa-star checked" style="font-size: medium"></i>
+                                <i class="fa fa-star checked" style="font-size: medium"></i>
+                                <i class="fa fa-star checked" style="font-size: medium"></i>
+                                <i class="fa fa-star checked" style="font-size: medium"></i>
+                                <i class="fa fa-star-o fa-lg checked" style="font-size: medium"></i>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+                <div class="col-3 col-sm-3 col-md-2 mt-1">
+                    <div class="Bot_tier">
+                        <div class="portrait embed-responsive embed-responsive-1by1">
+                            <img src="https://image.genie.co.kr/Y/IMAGE/IMG_MUSICVIDEO/000/184/992/184992_1_640x360.JPG/dims/resize/Q_80,0"
+                                 class="card-img-top embed-responsive-item img-fluid" alt="Responsive image">
+                        </div>
+                        <div class="name blockquote text-center">
+                            경찰차
+
+                            <div>
+                                <i class="fa fa-star checked" style="font-size: medium"></i>
+                                <i class="fa fa-star checked" style="font-size: medium"></i>
+                                <i class="fa fa-star checked" style="font-size: medium"></i>
+                                <i class="fa fa-star checked" style="font-size: medium"></i>
+                                <i class="fa fa-star-o fa-lg checked" style="font-size: medium"></i>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+                <div class="col-3 col-sm-3 col-md-2 mt-1">
+                    <div class="Bot_tier">
+                        <div class="portrait embed-responsive embed-responsive-1by1">
+                            <img src="https://image.genie.co.kr/Y/IMAGE/IMG_MUSICVIDEO/000/184/992/184992_1_640x360.JPG/dims/resize/Q_80,0"
+                                 class="card-img-top embed-responsive-item img-fluid" alt="Responsive image">
+                        </div>
+                        <div class="name blockquote text-center">
+                            경찰차
+
+                            <div>
+                                <i class="fa fa-star checked" style="font-size: medium"></i>
+                                <i class="fa fa-star checked" style="font-size: medium"></i>
+                                <i class="fa fa-star checked" style="font-size: medium"></i>
+                                <i class="fa fa-star checked" style="font-size: medium"></i>
+                                <i class="fa fa-star-o fa-lg checked" style="font-size: medium"></i>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+                <div class="col-3 col-sm-3 col-md-2 mt-1">
+                    <div class="Bot_tier">
+                        <div class="portrait embed-responsive embed-responsive-1by1">
+                            <img src="https://image.genie.co.kr/Y/IMAGE/IMG_MUSICVIDEO/000/184/992/184992_1_640x360.JPG/dims/resize/Q_80,0"
+                                 class="card-img-top embed-responsive-item img-fluid" alt="Responsive image">
+                        </div>
+                        <div class="name blockquote text-center">
+                            경찰차
+
+                            <div>
+                                <i class="fa fa-star checked" style="font-size: medium"></i>
+                                <i class="fa fa-star checked" style="font-size: medium"></i>
+                                <i class="fa fa-star checked" style="font-size: medium"></i>
+                                <i class="fa fa-star checked" style="font-size: medium"></i>
+                                <i class="fa fa-star-o fa-lg checked" style="font-size: medium"></i>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+                <div class="col-3 col-sm-3 col-md-2 mt-1">
+                    <div class="Bot_tier">
+                        <div class="portrait embed-responsive embed-responsive-1by1">
+                            <img src="https://image.genie.co.kr/Y/IMAGE/IMG_MUSICVIDEO/000/184/992/184992_1_640x360.JPG/dims/resize/Q_80,0"
+                                 class="card-img-top embed-responsive-item img-fluid" alt="Responsive image">
+                        </div>
+                        <div class="name blockquote text-center">
+                            경찰차
+
+                            <div>
+                                <i class="fa fa-star checked" style="font-size: medium"></i>
+                                <i class="fa fa-star checked" style="font-size: medium"></i>
+                                <i class="fa fa-star checked" style="font-size: medium"></i>
+                                <i class="fa fa-star checked" style="font-size: medium"></i>
+                                <i class="fa fa-star-o fa-lg checked" style="font-size: medium"></i>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+                <div class="col-3 col-sm-3 col-md-2 mt-1">
+                    <div class="Bot_tier">
+                        <div class="portrait embed-responsive embed-responsive-1by1">
+                            <img src="https://image.genie.co.kr/Y/IMAGE/IMG_MUSICVIDEO/000/184/992/184992_1_640x360.JPG/dims/resize/Q_80,0"
+                                 class="card-img-top embed-responsive-item img-fluid" alt="Responsive image">
+                        </div>
+                        <div class="name blockquote text-center">
+                            경찰차
+
+                            <div>
+                                <i class="fa fa-star checked" style="font-size: medium"></i>
+                                <i class="fa fa-star checked" style="font-size: medium"></i>
+                                <i class="fa fa-star checked" style="font-size: medium"></i>
+                                <i class="fa fa-star checked" style="font-size: medium"></i>
+                                <i class="fa fa-star-o fa-lg checked" style="font-size: medium"></i>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+                <div class="col-3 col-sm-3 col-md-2 mt-1">
+                    <div class="Bot_tier">
+                        <div class="portrait embed-responsive embed-responsive-1by1">
+                            <img src="https://image.genie.co.kr/Y/IMAGE/IMG_MUSICVIDEO/000/184/992/184992_1_640x360.JPG/dims/resize/Q_80,0"
+                                 class="card-img-top embed-responsive-item img-fluid" alt="Responsive image">
+                        </div>
+                        <div class="name blockquote text-center">
+                            경찰차
+
+                            <div>
+                                <i class="fa fa-star checked" style="font-size: medium"></i>
+                                <i class="fa fa-star checked" style="font-size: medium"></i>
+                                <i class="fa fa-star checked" style="font-size: medium"></i>
+                                <i class="fa fa-star checked" style="font-size: medium"></i>
+                                <i class="fa fa-star-o fa-lg checked" style="font-size: medium"></i>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+                <div class="col-3 col-sm-3 col-md-2 mt-1">
+                    <div class="Bot_tier">
+                        <div class="portrait embed-responsive embed-responsive-1by1">
+                            <img src="https://image.genie.co.kr/Y/IMAGE/IMG_MUSICVIDEO/000/184/992/184992_1_640x360.JPG/dims/resize/Q_80,0"
+                                 class="card-img-top embed-responsive-item img-fluid" alt="Responsive image">
+                        </div>
+                        <div class="name blockquote text-center">
+                            경찰차
+
+                            <div>
+                                <i class="fa fa-star checked" style="font-size: medium"></i>
+                                <i class="fa fa-star checked" style="font-size: medium"></i>
+                                <i class="fa fa-star checked" style="font-size: medium"></i>
+                                <i class="fa fa-star checked" style="font-size: medium"></i>
+                                <i class="fa fa-star-o fa-lg checked" style="font-size: medium"></i>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+
+        // 네비게이션 컬러
+        // 나중에 반복문 써서 간략하게 해야함
+
+        document.getElementsByClassName("nav_font")[0].addEventListener('mouseover', function () {
+            document.getElementsByClassName("nav_font")[0].style.color = '#ff6209';
+            document.getElementsByClassName("nav_font")[0].style.textDecoration = 'none';
+        })
+
+        document.getElementsByClassName("nav_font")[1].addEventListener('mouseover', function () {
+            document.getElementsByClassName("nav_font")[1].style.color = '#ff6209';
+            document.getElementsByClassName("nav_font")[1].style.textDecoration = 'none';
+        })
+
+        document.getElementsByClassName("nav_font")[2].addEventListener('mouseover', function () {
+            document.getElementsByClassName("nav_font")[2].style.color = '#ff6209';
+            document.getElementsByClassName("nav_font")[2].style.textDecoration = 'none';
+        })
+
+
+
+    </script>
+
+</body>
+</html>

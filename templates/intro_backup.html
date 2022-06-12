@@ -1,0 +1,241 @@
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+          integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+            integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+            crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+            integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+            crossorigin="anonymous"></script>
+    <!-- Add icon library -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+
+    <title>핑크퐁</title>
+
+    <!--Font-->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Dongle:wght@300;400;700&display=swap" rel="stylesheet">
+
+    <style>
+
+        *{font-family: 'Dongle', sans-serif;
+            font-size: x-large;
+        }
+
+        .checked {
+            color: orange;
+        }
+
+        .rating{
+
+        }
+
+        .de_text{
+            display: none;
+
+        }
+
+        .pic_list_container{
+            display: flex;
+            flex-wrap: wrap;
+        }
+
+        .pic_item_list{
+            flex-basis: 25%;
+            display: flex;
+            flex-direction: column;
+            flex-shrink: 0;
+            flex-grow: 0;
+
+        }
+
+        .pic_item_image{
+            flex: fit-content;
+        }
+
+        .wrapper{
+            position: relative;
+            overflow: hidden;
+            width: 100%;
+            padding-top: 56.25%;
+        }
+
+        .responsive-iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            bottom: 0;
+            right: 0;
+            width: 100%;
+            height: 100%;
+        }
+
+        .detail_button{
+            background-color: white;
+            border: lightpink;
+
+        }
+    </style>
+
+</head>
+<body>
+
+<div class="container">
+    <!--카테고리(메뉴바)-->
+    <div class="row category"> 카테고리
+        <div class="category col-xs-12"></div>
+    </div>
+    <!--1행 이미지 | 간략 소개-->
+    <div class="row simple">
+        <!--메인 이미지-->
+        <div class="img col-md-6">
+            <img src="https://yt3.ggpht.com/ytc/AKedOLSfQxw7g_Z3_kPv_QPg1sLHFofJXKPV34yYOOpsAg=s900-c-k-c0x00ffffff-no-rj"
+                 class="img-fluid" alt="Responsive image">
+        </div>
+        <!--간략 소개-->
+        <div class="desc col-md-6 descript_box">
+            <h1>핑크퐁</h1>
+            <p>삼성출판사의 관계사인 더핑크퐁컴퍼니에서 만든 어린이 교육용 앱에서 시작된 애니메이션, 동요, 게임 등 다채로운 컨텐츠 브랜드. 대표작은 '상어 가족'.</p>
+        </div>
+    </div>
+    <!--2행 좋아요/싫어요 | 평가-->
+    <div class="row like justify-content-around mt-3">
+
+        <!--좋아요/싫어요-->
+        <div class="like col-xs-12 mx-auto my-3">
+            <button type="button" class="btn btn-outline-success btn-primary btn-lg mx-3">좋아요!</button>
+            <button type="button" class="btn btn-outline-dark btn-primary btn-lg mx-3">싫어요.</button>
+        </div>
+
+        <!--평가-->
+         <div class="rating col-md-6 align-self-center">
+             <div>
+
+             </div>
+             <i class="fa fa-star fa-2x checked"></i>
+             <i class="fa fa-star fa-2x checked"></i>
+             <i class="fa fa-star fa-2x checked"></i>
+             <i class="fa fa-star fa-2x checked"></i>
+             <i class="fa fa-star fa-2x checked"></i>
+             (점수: 99)
+         </div>
+    </div>
+
+    <!--3행 사진 리스트-->
+        <!--    작은 해상도에서 이미지 원본 사이즈로 표시되는 문제가 있었는데, 소개 이미지에 적용된 반응형 코드를 넣어서 해결-->
+        <!--    ** 추가되야할 내용: 테두리, 사진 클릭하면 원본 이미지 뜨기-->
+    <div class="row pictures">
+        <div class="pic_list_container col-12 my-4">
+
+            <div class="col-3 col-xs-6 pic_item_image pic_item_list my-2">
+                <img src="https://image.ajunews.com/content/image/2020/06/08/20200608083452292148.png"
+                class="img-fluid" alt="Responsive image">
+            </div>
+            <div class="col-3 col-xs-6 pic_item_image pic_item_list my-2">
+                <img src="https://www.pinkfong.com/assets/img/sns-ko.png"
+                class="img-fluid" alt="Responsive image">
+            </div>
+            <div class="col-3 col-xs-6 pic_item_image pic_item_list my-2">
+                <img src="https://store.pinkfong.com/static/image/category/notice_9777ee_1.png"
+                class="img-fluid" alt="Responsive image">
+            </div>
+            <div class="col-3 col-xs-6 pic_item_image pic_item_list my-2">
+                <img src="https://img1.daumcdn.net/thumb/R1280x0.fjpg/?fname=http://t1.daumcdn.net/brunch/service/user/2qcu/image/-ll3u4PHQkSwj7MXqw9oLQUsHEY.jpg"
+                class="img-fluid" alt="Responsive image">
+            </div>
+
+        </div>
+    </div>
+
+    <!--4행 유튜브 리스트-->
+        <!--데스크탑 모드에서 유튜브 창 비율이 안 맞음, 해상도에 따라서 비율 조정? 해야함-->
+        <!--아니면 슬라이드 형식으로 바꾸기-->
+    <div class="row video justify-content-between">
+            <div class="wrapper col-12">
+                <iframe class="responsive-iframe" width="100%" height="100%" src="https://www.youtube.com/embed/ORRRsP3i5pA"
+                        frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+                        allowfullscreen>
+                </iframe>
+            </div>
+
+            <div class="col-2">
+                <button type="button" class="btn btn-outline-success btn-sm">이전 영상</button>
+            </div>
+            <div class="col-2">
+                <button type="button" class="btn btn-outline-success btn-sm">다음 영상</button>
+            </div>
+
+
+<!--            <div class="col-md-3 wrapper">-->
+<!--                <iframe class="responsive-iframe" width="100%" height="100%" src="https://www.youtube.com/embed/D1PvIWdJ8xo"-->
+<!--                        frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"-->
+<!--                        allowfullscreen></iframe>-->
+<!--            </div>-->
+<!--            <div class="col-md-3 wrapper">-->
+<!--                <iframe class="responsive-iframe" width="100%" height="100%" src="https://www.youtube.com/embed/D1PvIWdJ8xo"-->
+<!--                        frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"-->
+<!--                        allowfullscreen></iframe>-->
+<!--            </div>-->
+<!--            <div class="col-md-3 wrapper">-->
+<!--                <iframe class="responsive-iframe" width="100%" height="100%" src="https://www.youtube.com/embed/D1PvIWdJ8xo"-->
+<!--                        frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"-->
+<!--                        allowfullscreen></iframe>-->
+<!--            </div>-->
+    </div>
+
+    <!--5행 상세 소개-->
+        <!--** 추가되어야할 내용: 마침표마다 줄 바꿈해서 가독성 높이기-->
+    <div class="row details mt-4">
+        <div class="col-xs-12">
+            <button class="btn btn-outline-success btn-primary btn-md mb-3" onclick="unfold()" id="de_button">설명 펼치기</button>
+            <div id="detail_text" class="de_text">
+                원래 삼성출판사의 예전 명칭이였던 삼성북스의 로고 및 마스코트 퐁이를 리뉴얼 하여 핑크퐁이라는 새로운 이름을 붙여준 것이다. 캐릭터 디자인 또한 사백안에서 둥군
+                눈으로 변하는 등 과거와 크게 달라졌으며, 초기 작품에 등장했던 파란 토끼 캐릭터 모모, 양갈래 머리를 가진 인간 소녀 캐릭터 봄이 등의 다수의 캐릭터가 하차해 초기 콘텐츠에서 등장 후
+                2022년 현재까지 유지된 캐릭터는 산타클로스 정도 밖에 되지 않는다.
+
+                뽀롱뽀롱 뽀로로처럼 모두가 즐겁고 평화로운 일반적인 유아용 동물 애니메이션과는 달리 살벌한 야생 세계를 해학과 풍자로 적나라하게 보여준다. 따라서 어른들이 봐도 무척 재미있는 노래들이
+                많다.
+                물고기들이 상어가족으로부터 도망치다 "살았다~"하면서 춤을 추지만, 그 뒤에서는 상어 가족들이 포크를 들고 침을 흘리며 물고기들을 노려보고 있다거나(상어 가족), 육식공룡 새끼들이
+                배고프다고
+                하자 티라노사우루스 요리사가 노래 초반부에 나온 이구아노돈 요리사와 오르니토미무스 요리사를 잡아먹으러 간다거나...(나는야 공룡 요리사)
+
+                유튜브 한류스타로 230억뷰를 달성했다. 강남스타일의 조회수를 넘어섰다는 평. 글로벌 시장을 타케팅 하기 위해 다양한 언어로 유튜브 채널을 운영 중이다. 공식 영어 유튜브 채널은
+                2021년 6월
+                29일 현재 5000만 명의 구독자를 보유하고 있고, 한국 유튜브 채널의 경우 현재 911만 명의 구독자를 보유하고 있다.
+
+                현재 Despasito를 제치고 유튜브 누적 조회수 1위를 달성하였다.
+
+                멜론 급상승 차트 1위에 여러번 등장 했으며, 2018년 설 무렵 지니 실시간 차트에 차트인 한 적이 있고 멜론에서도 최고 일간 213위까지 오른 적이 있었다.
+
+                마스코트는 머리에 왕관을 쓰고 목에 별을 단 분홍색 여우로, 핑크퐁 유튜브 영상 도입부에 항상 등장한다.
+            </div>
+        </div>
+    </div>
+</div>
+
+
+    <script>
+
+        function unfold(){
+            document.getElementById('detail_text').style.display = 'block';
+        }
+
+    </script>
+
+</body>
+
+</html>

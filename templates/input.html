@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+
+    <title>캐릭터 정보 입력 페이지</title>
+
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+          integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
+          crossorigin="anonymous">
+    <!-- JS -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+            integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+            crossorigin="anonymous"></script>
+
+    <script type="text/javascript">
+
+        // $(document).ready(function () {
+        //     $("#reviews-box").html("");
+        //     showReview();
+        // });
+
+        function postCharacter() {
+            //화면에 입력된 이름, 소속, 사진url, 간략/상세 소개글을 가져옴
+            let name = $("#name").val();
+            let group = $("#group").val();
+            let portrait = $("#portrait").val();
+            let short_desc = $("#short_desc").val();
+            let long_desc = $("#long_desc").val();
+
+            // POST /posting 에 저장을 요청
+            $.ajax({
+                type: "POST",
+                url: "/posting",
+                data: {
+                    name_give: name,
+                    group_give: group,
+                    portrait_give: portrait,
+                    short_desc_give: short_desc,
+                    long_desc_give: long_desc
+                },
+                success: function (response) {
+                    alert(response["msg"]);
+                    window.location.reload();
+                }
+            })
+        }
+
+    </script>
+
+
+</head>
+
+<body>
+
+    <h1>캐릭터 정보 입력 페이지</h1>
+    <h4>이곳에 정보를 입력하고 저장하면 캐릭터 페이지가 생성됩니다.</h4>
+    <button id="save" onclick="postCharacter()">저장하기</button>
+    <p></p>
+
+    <!--    사진, 간략 소개, 상세 소개-->
+    <!--    API: 사진, 유튜브-->
+
+    <div>
+        <span>캐릭터 이름:</span>
+        <input id="name" style="width: 100px">
+
+        <span>캐릭터 소속:</span>
+        <input id="group" style="width: 100px">
+    </div>
+
+    <div>
+        소개 사진URL: <input id="portrait" style="width: 500px">
+    </div>
+
+    <p>간략 소개글</p>
+    <textarea id="short_desc" style="width: 700px; height: 200px"></textarea>
+
+    <p>상세 소개글</p>
+    <textarea id="long_desc" style="width: 700px; height: 500px"></textarea>
+
+
+</body>
+</html>

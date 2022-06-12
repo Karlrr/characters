@@ -1,0 +1,351 @@
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+          integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+            integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+            crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+            integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+            crossorigin="anonymous"></script>
+    <!-- Add icon library -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+
+    <title>캐릭터 정보</title>
+
+    <!--Font-->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Dongle:wght@300;400;700&display=swap" rel="stylesheet">
+
+    <style>
+
+        *{font-family: 'Dongle', sans-serif;
+            font-size: x-large;
+        }
+
+        img {vertical-align: middle;}
+
+        .checked {
+            color: orange;
+        }
+
+        .rating{
+
+        }
+
+        .de_text{
+            display: none;
+
+        }
+
+        .pic_list_container{
+            display: none;
+            flex-wrap: wrap;
+        }
+
+        .pic_item_list{
+            flex-basis: 25%;
+            display: flex;
+            flex-direction: column;
+            flex-shrink: 0;
+            flex-grow: 0;
+
+        }
+
+        .pic_item_image{
+            flex: fit-content;
+        }
+
+        .wrapper{
+            position: relative;
+            overflow: hidden;
+            width: 100%;
+            padding-top: 56.25%;
+        }
+
+        .responsive-iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            bottom: 0;
+            right: 0;
+            width: 100%;
+            height: 100%;
+        }
+
+        .detail_button{
+            background-color: white;
+            border: lightpink;
+
+        }
+
+        /*<!--이미지 슬라이드-->*/
+        .next, .prev {
+            cursor: pointer;
+            /*position: absolute;*/
+            top: 50%;
+            width: auto;
+            padding: 16px;
+            margin-top: -22px;
+            color: white;
+            font-weight: bold;
+            user-select: none;
+        }
+
+        .pictures_button{
+            display: flex;
+        }
+
+
+    </style>
+
+</head>
+<body>
+
+<div id="page" class="container">
+    <!--카테고리(메뉴바)-->
+    <div class="row category"> 카테고리
+        <div class="category col-xs-12"></div>
+    </div>
+</div>
+
+
+    <script>
+
+        // 페이지 보이기 함수
+        $(document).ready(function (){
+            showInformation();
+        });
+
+        function unfold_desc(){
+            document.getElementById('detail_text').style.display = 'flex';
+        }
+        function unfold_image(){
+            document.getElementById('detail_text').style.display = 'flex';
+        }
+
+        function show_button() {
+            document.getElementById('list_button1').style.display = 'flex';
+            document.getElementById('list_button2').style.display = 'flex';
+        }
+
+        // 메인-상세정보 페이지 연결 함수
+        function showInformation() {
+                    $.ajax({
+                        type: "GET",
+                        url: "/inform",
+                        data: {},
+                        success: function (response) {
+                            let information = response['character_selected']
+
+                            let name = information['name']
+                            let portrait = information['portrait']
+                            let short_desc = information['short_desc']
+                            let long_desc = information['long_desc']
+                            let score = information['score']
+
+                            let temp_html = `    <!--1행 이미지 | 간략 소개-->
+                                                <div class="row simple">
+                                                    <!--메인 이미지-->
+                                                    <div class="img col-md-6">
+                                                        <img src="${portrait}"
+                                                             class="img-fluid" alt="Responsive image">
+                                                    </div>
+                                                    <!--간략 소개-->
+                                                    <div class="desc col-md-6 descript_box">
+                                                        <h1>${name}</h1>
+                                                        <p>${short_desc}</p>
+                                                    </div>
+                                                </div>
+                                                <!--2행 좋아요/싫어요 | 평가-->
+                                                <div class="row like justify-content-around mt-3">
+
+                                                    <!--좋아요/싫어요-->
+                                                    <div class="like col-xs-12 mx-auto my-3">
+                                                        <button type="button" class="btn btn-outline-success btn-primary btn-lg mx-3">좋아요!</button>
+                                                        <button type="button" class="btn btn-outline-dark btn-primary btn-lg mx-3">싫어요.</button>
+                                                    </div>
+
+                                                    <!--평가-->
+                                                     <div class="rating col-md-6 align-self-center">
+                                                         <div>
+
+                                                         </div>
+                                                         <i class="fa fa-star fa-2x checked"></i>
+                                                         <i class="fa fa-star fa-2x checked"></i>
+                                                         <i class="fa fa-star fa-2x checked"></i>
+                                                         <i class="fa fa-star fa-2x checked"></i>
+                                                         <i class="fa fa-star fa-2x checked"></i>
+                                                         (점수: ${score})
+                                                     </div>
+                                                </div>
+
+                                                <!--3행 유튜브 리스트-->
+                                                    <!--데스크탑 모드에서 유튜브 창 비율이 안 맞음, 해상도에 따라서 비율 조정? 해야함-->
+                                                    <!--아니면 슬라이드 형식으로 바꾸기-->
+                                                <div class="row video">
+                                                    <div class="wrapper">
+                                                        <iframe class="responsive-iframe" width="100%" height="100%" src="https://www.youtube.com/embed/ORRRsP3i5pA"
+                                                                frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+                                                                allowfullscreen>
+
+                                                        </iframe>
+                                                    </div>
+                                                <!--            <div class="col-md-3 wrapper">-->
+                                                <!--                <iframe class="responsive-iframe" width="100%" height="100%" src="https://www.youtube.com/embed/D1PvIWdJ8xo"-->
+                                                <!--                        frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"-->
+                                                <!--                        allowfullscreen></iframe>-->
+                                                <!--            </div>-->
+                                                <!--            <div class="col-md-3 wrapper">-->
+                                                <!--                <iframe class="responsive-iframe" width="100%" height="100%" src="https://www.youtube.com/embed/D1PvIWdJ8xo"-->
+                                                <!--                        frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"-->
+                                                <!--                        allowfullscreen></iframe>-->
+                                                <!--            </div>-->
+                                                <!--            <div class="col-md-3 wrapper">-->
+                                                <!--                <iframe class="responsive-iframe" width="100%" height="100%" src="https://www.youtube.com/embed/D1PvIWdJ8xo"-->
+                                                <!--                        frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"-->
+                                                <!--                        allowfullscreen></iframe>-->
+                                                <!--            </div>-->
+                                                </div>
+
+                                                <!--4행 사진 리스트-->
+                                                    <!--    작은 해상도에서 이미지 원본 사이즈로 표시되는 문제가 있었는데, 소개 이미지에 적용된 반응형 코드를 넣어서 해결-->
+                                                    <!--    ** 추가되야할 내용: 테두리, 사진 클릭하면 원본 이미지 뜨기-->
+                                                <div class="row pictures">
+                                                    <div class="pic_list_container col-xs-12 my-4">
+
+                                                        <div class="col-md-3 pic_item_image pic_item_list my-2">
+                                                            <img src="https://image.ajunews.com/content/image/2020/06/08/20200608083452292148.png"
+                                                            class="img-fluid" alt="Responsive image">
+                                                        </div>
+                                                        <div class="col-md-3 pic_item_image pic_item_list my-2">
+                                                            <img src="https://image.ajunews.com/content/image/2020/06/08/20200608083452292148.png"
+                                                            class="img-fluid" alt="Responsive image">
+                                                        </div>
+                                                        <div class="col-md-3 pic_item_image pic_item_list my-2">
+                                                            <img src="https://image.ajunews.com/content/image/2020/06/08/20200608083452292148.png"
+                                                            class="img-fluid" alt="Responsive image">
+                                                        </div>
+                                                        <div class="col-md-3 pic_item_image pic_item_list my-2">
+                                                            <img src="https://image.ajunews.com/content/image/2020/06/08/20200608083452292148.png"
+                                                            class="img-fluid" alt="Responsive image">
+                                                        </div>
+
+                                                    </div>
+                                                    <div class="pic_list_container col-xs-12 my-4">
+
+                                                        <div class="col-md-3 pic_item_image pic_item_list my-2">
+                                                            <img src="https://www.pinkfong.com/assets/img/sns-ko.png"
+                                                            class="img-fluid" alt="Responsive image">
+                                                        </div>
+                                                        <div class="col-md-3 pic_item_image pic_item_list my-2">
+                                                            <img src="https://www.pinkfong.com/assets/img/sns-ko.png"
+                                                            class="img-fluid" alt="Responsive image">
+                                                        </div>
+                                                        <div class="col-md-3 pic_item_image pic_item_list my-2">
+                                                            <img src="https://www.pinkfong.com/assets/img/sns-ko.png"
+                                                            class="img-fluid" alt="Responsive image">
+                                                        </div>
+                                                        <div class="col-md-3 pic_item_image pic_item_list my-2">
+                                                            <img src="https://www.pinkfong.com/assets/img/sns-ko.png"
+                                                            class="img-fluid" alt="Responsive image">
+                                                        </div>
+
+                                                    </div>
+                                                    <div class="pic_list_container col-xs-12 my-4">
+
+                                                        <div class="col-md-3 pic_item_image pic_item_list my-2">
+                                                            <img src="https://image.ajunews.com/content/image/2020/06/08/20200608083452292148.png"
+                                                            class="img-fluid" alt="Responsive image">
+                                                        </div>
+                                                        <div class="col-md-3 pic_item_image pic_item_list my-2">
+                                                            <img src="https://www.pinkfong.com/assets/img/sns-ko.png"
+                                                            class="img-fluid" alt="Responsive image">
+                                                        </div>
+                                                        <div class="col-md-3 pic_item_image pic_item_list my-2">
+                                                            <img src="https://store.pinkfong.com/static/image/category/notice_9777ee_1.png"
+                                                            class="img-fluid" alt="Responsive image">
+                                                        </div>
+                                                        <div class="col-md-3 pic_item_image pic_item_list my-2">
+                                                            <img src="https://img1.daumcdn.net/thumb/R1280x0.fjpg/?fname=http://t1.daumcdn.net/brunch/service/user/2qcu/image/-ll3u4PHQkSwj7MXqw9oLQUsHEY.jpg"
+                                                            class="img-fluid" alt="Responsive image">
+                                                        </div>
+
+                                                    </div>
+                                                </div>
+                                                <div class="row justify-content-between">
+                                                    <div class="col-xs-6" id="pictures_button1">
+                                                        <a class="prev pictures_button" onclick="plusSlides(-1)">이전 이미지</a>
+                                                    </div>
+                                                    <div class="col-xs-6" id="pictures_button2">
+                                                        <a class="next pictures_button" onclick="plusSlides(1)">다음 이미지</a>
+                                                    </div>
+                                                </div>
+
+
+
+                                                <!--5행 상세 소개-->
+                                                    <!--** 추가되어야할 내용: 마침표마다 줄 바꿈해서 가독성 높이기-->
+                                                <div class="row details mt-4">
+                                                    <div class="col-xs-12">
+                                                        <button class="btn btn-outline-success btn-primary btn-md mb-3" onclick="unfold_desc()" id="de_button">설명 펼치기</button>
+                                                        <div id="detail_text" class="de_text">
+                                                            ${long_desc}
+                                                        </div>
+                                                    </div>
+                                                </div>`
+
+                            $('#page').append(temp_html)
+                            plusSlides(1)
+                        }
+                    })
+        }
+
+        <!--이미지 슬라이드 함수-->
+
+        let slideIndex = 1;
+        showSlides(slideIndex);
+
+        function plusSlides(n) {
+            showSlides(slideIndex += n);
+        }
+
+        function currentSlide(n) {
+            showSlides(slideIndex = n);
+        }
+
+        <!--제이쿼리로 되는지 한번 해보기-->
+        function showSlides(n) {
+            let i;
+            let slides = document.getElementsByClassName("pic_list_container");
+
+            if (n > slides.length) {
+                slideIndex = 1
+            }
+            if (n < 1) {
+                slideIndex = slides.length
+            }
+            for (i = 0; i < slides.length; i++) {
+                slides[i].style.display = "none";
+            }
+            slides[slideIndex - 1].style.display = "flex";
+        }
+
+    </script>
+
+</body>
+
+</html>
